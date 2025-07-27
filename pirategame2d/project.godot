@@ -11,5 +11,18 @@ config_version=5
 [application]
 
 config/name="PirateGame2d"
+run/main_scene="uid://br4y5sl6od47e"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
+
+[display]
+
+window/stretch/scale=3.0
+
+[global_group]
+
+player=""
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0

@@ -15,19 +15,22 @@ func _physics_process(delta):
 	
 	var swordExtra = "_nos"
 	
+	if(hassSword):
+		swordExtra = "_hs"
 	# Add the gravity.
 	if not is_on_floor():
-		velocity += get_gravity() * delta
+		velocity.y += gravity * delta
 		print(velocity.y)
+		
 		if(velocity.y > 0):
-			animSprite.play("fall")
+			animSprite.play("fall" + swordExtra)
 		else:
-			animSprite.play("jump")
+			animSprite.play("jump" + swordExtra)
 	else:
 		if(velocity.x == 0):
-			animSprite.play("idle")
+			animSprite.play("idle" + swordExtra)
 		else:
-			animSprite.play("run")
+			animSprite.play("run" + swordExtra)
 
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():

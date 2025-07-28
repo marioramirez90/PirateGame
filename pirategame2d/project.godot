@@ -15,6 +15,10 @@ run/main_scene="uid://br4y5sl6od47e"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Global="*res://skripte/Global.gd"
+
 [display]
 
 window/stretch/scale=3.0
@@ -22,6 +26,7 @@ window/stretch/scale=3.0
 [global_group]
 
 player=""
+FromPlayer=""
 
 [input]
 

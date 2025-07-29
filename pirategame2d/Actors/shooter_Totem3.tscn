@@ -1,0 +1,52 @@
+[gd_scene load_steps=10 format=3 uid="uid://01k74ox4atfb"]
+
+[ext_resource type="PackedScene" uid="uid://db3jlmh5ey0gn" path="res://Actors/shooter.tscn" id="1_6nehf"]
+[ext_resource type="Texture2D" uid="uid://sfwuxmh3c3us" path="res://Assets/Shooter Traps/Sprites/Totems/Head 3/Attack 1/1.png" id="2_6nehf"]
+[ext_resource type="Texture2D" uid="uid://cy7oipf4i45dw" path="res://Assets/Shooter Traps/Sprites/Totems/Head 3/Attack 1/2.png" id="3_m11ns"]
+[ext_resource type="Texture2D" uid="uid://cosojfm6amkcb" path="res://Assets/Shooter Traps/Sprites/Totems/Head 3/Attack 1/3.png" id="4_yrefm"]
+[ext_resource type="Texture2D" uid="uid://b78kmdt3mycpv" path="res://Assets/Shooter Traps/Sprites/Totems/Head 3/Attack 1/4.png" id="5_fmyqc"]
+[ext_resource type="Texture2D" uid="uid://soecm5eptgd4" path="res://Assets/Shooter Traps/Sprites/Totems/Head 3/Attack 1/5.png" id="6_1rbu8"]
+[ext_resource type="Texture2D" uid="uid://cu4pa4mu5o6ck" path="res://Assets/Shooter Traps/Sprites/Totems/Head 3/Attack 1/6.png" id="7_l3jat"]
+[ext_resource type="Texture2D" uid="uid://b04x35pfsodkm" path="res://Assets/Shooter Traps/Sprites/Totems/Head 3/Idle 1/1.png" id="8_sy08r"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8tmp6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_6nehf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_m11ns")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_yrefm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_fmyqc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_1rbu8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_l3jat")
+}],
+"loop": false,
+"name": &"fire",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_sy08r")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="Shooter_Totem3" instance=ExtResource("1_6nehf")]
+position = Vector2(1, -10)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="1"]
+position = Vector2(0, -9)
+sprite_frames = SubResource("SpriteFrames_8tmp6")
+animation = &"idle"

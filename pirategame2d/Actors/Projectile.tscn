@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://8iqv1x4460gi"]
+[gd_scene load_steps=16 format=3 uid="uid://8iqv1x4460gi"]
 
 [ext_resource type="Texture2D" uid="uid://bwf75eck4cslg" path="res://Assets/Shooter Traps/Sprites/Cannon/Cannon Ball Explosion/1.png" id="1_2hxer"]
 [ext_resource type="Script" uid="uid://dx0e0w0i0jlf0" path="res://skripte/projectile.gd" id="1_x3rot"]
@@ -9,6 +9,10 @@
 [ext_resource type="Texture2D" uid="uid://dashd4aa7vkk2" path="res://Assets/Shooter Traps/Sprites/Cannon/Cannon Ball Explosion/6.png" id="6_17cam"]
 [ext_resource type="Texture2D" uid="uid://0bqc4sgl1tx4" path="res://Assets/Shooter Traps/Sprites/Cannon/Cannon Ball Explosion/7.png" id="7_xofdk"]
 [ext_resource type="Texture2D" uid="uid://cjoutgr4stk3d" path="res://Assets/Shooter Traps/Sprites/Cannon/Cannon Ball Idle/1.png" id="8_rc4jh"]
+[ext_resource type="Texture2D" uid="uid://bybvotliy6qg4" path="res://Assets/Shooter Traps/Sprites/Totems/Wood Spike/Destroyed/1.png" id="10_x41dx"]
+[ext_resource type="Texture2D" uid="uid://bhajsrn4kqqp1" path="res://Assets/Shooter Traps/Sprites/Totems/Wood Spike/Destroyed/2.png" id="11_17cam"]
+[ext_resource type="Texture2D" uid="uid://76tkuxk3j2do" path="res://Assets/Shooter Traps/Sprites/Totems/Wood Spike/Destroyed/3.png" id="12_xofdk"]
+[ext_resource type="Texture2D" uid="uid://b6v4os0trxy7y" path="res://Assets/Shooter Traps/Sprites/Totems/Wood Spike/Idle/1.png" id="13_17cam"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_vygqn"]
 animations = [{
@@ -40,11 +44,33 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("10_x41dx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_17cam")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_xofdk")
+}],
+"loop": false,
+"name": &"explosion_wood",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("8_rc4jh")
 }],
 "loop": true,
 "name": &"idle",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_17cam")
+}],
+"loop": false,
+"name": &"idle_wood",
+"speed": 10.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_x3rot"]
@@ -55,7 +81,7 @@ script = ExtResource("1_x3rot")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_vygqn")
-animation = &"explosion"
+animation = &"explosion_wood"
 
 [node name="Area2D" type="Area2D" parent="."]
 

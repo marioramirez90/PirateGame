@@ -1,0 +1,53 @@
+[gd_scene load_steps=10 format=3 uid="uid://duqvkjq1lc58e"]
+
+[ext_resource type="Script" uid="uid://djastgjoo0lgw" path="res://skripte/enemy_crabby.gd" id="1_bwkoy"]
+[ext_resource type="Texture2D" uid="uid://b3x23daq0bniy" path="res://Assets/The Crusty Crew/Sprites/Crabby/02-Run/Run 01.png" id="1_xwwkd"]
+[ext_resource type="Texture2D" uid="uid://bxdsmqb4618vw" path="res://Assets/The Crusty Crew/Sprites/Crabby/02-Run/Run 02.png" id="2_bwkoy"]
+[ext_resource type="Texture2D" uid="uid://54c5voc724s2" path="res://Assets/The Crusty Crew/Sprites/Crabby/02-Run/Run 03.png" id="3_e1dpy"]
+[ext_resource type="Texture2D" uid="uid://cx5hfxx3qbnjh" path="res://Assets/The Crusty Crew/Sprites/Crabby/02-Run/Run 04.png" id="4_43l60"]
+[ext_resource type="Texture2D" uid="uid://cap4qeg7v8juf" path="res://Assets/The Crusty Crew/Sprites/Crabby/02-Run/Run 05.png" id="5_cnul1"]
+[ext_resource type="Texture2D" uid="uid://ds22kw05xwh32" path="res://Assets/The Crusty Crew/Sprites/Crabby/02-Run/Run 06.png" id="6_pfaia"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xwwkd"]
+radius = 12.775
+height = 25.55
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bwkoy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_xwwkd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_bwkoy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_e1dpy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_43l60")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_cnul1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_pfaia")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}]
+
+[node name="Enemy_Crabby" type="CharacterBody2D"]
+collision_layer = 0
+script = ExtResource("1_bwkoy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
+shape = SubResource("CapsuleShape2D_xwwkd")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_bwkoy")
+animation = &"run"
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

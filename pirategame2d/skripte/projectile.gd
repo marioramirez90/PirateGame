@@ -9,11 +9,22 @@ var canMove = true
 var range = 1000
 var startX = 0
 
+var lookLeft = true
+
+var projectileType = Global.projectileTypes.CANNON
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	startX = self.position.x
-	$AnimatedSprite2D.play("idle")
+	
+	if(lookLeft == false):
+		$AnimatedSprite2D.flip_h = true
+	
+	if(projectileType == 0):
+		$AnimatedSprite2D.play("idle")
+	else:
+		$AnimatedSprite2D.play("idle_wood")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -31,7 +42,10 @@ func _process(delta: float) -> void:
 				explode()
 
 func explode():
-	$AnimatedSprite2D.play("explosion")
+	if(projectileType == 0):
+		$AnimatedSprite2D.play("explosion")
+	else:
+		$AnimatedSprite2D.play("explosion_wood")
 	await get_tree().create_timer(0.3).timeout
 	queue_free()
 	

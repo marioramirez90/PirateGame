@@ -1,0 +1,88 @@
+[gd_scene load_steps=16 format=3 uid="uid://db3jlmh5ey0gn"]
+
+[ext_resource type="Script" uid="uid://bo7gr0na2mq7g" path="res://skripte/shooter.gd" id="1_lavs4"]
+[ext_resource type="Texture2D" uid="uid://jonm26s0kiy6" path="res://Assets/Shooter Traps/Sprites/Cannon/Cannon Fire/1.png" id="2_63oah"]
+[ext_resource type="Texture2D" uid="uid://dxg7uqqvfap2y" path="res://Assets/Shooter Traps/Sprites/Cannon/Cannon Fire/2.png" id="3_scu0k"]
+[ext_resource type="Texture2D" uid="uid://c7i1dcpaacsvt" path="res://Assets/Shooter Traps/Sprites/Cannon/Cannon Fire/3.png" id="4_t0buk"]
+[ext_resource type="Texture2D" uid="uid://02oevdjgmmam" path="res://Assets/Shooter Traps/Sprites/Cannon/Cannon Fire/4.png" id="5_i3ggf"]
+[ext_resource type="Texture2D" uid="uid://658syhfghdm3" path="res://Assets/Shooter Traps/Sprites/Cannon/Cannon Fire/5.png" id="6_amw5h"]
+[ext_resource type="Texture2D" uid="uid://dcu8mn2p158yn" path="res://Assets/Shooter Traps/Sprites/Cannon/Cannon Fire/6.png" id="7_51sxj"]
+[ext_resource type="Texture2D" uid="uid://onp4a0ba1ih1" path="res://Assets/Shooter Traps/Sprites/Cannon/Cannon Fire Effect/1.png" id="8_go8pw"]
+[ext_resource type="Texture2D" uid="uid://8raxtwcrett7" path="res://Assets/Shooter Traps/Sprites/Cannon/Cannon Fire Effect/2.png" id="9_xnul3"]
+[ext_resource type="Texture2D" uid="uid://dqnwoylfjo55h" path="res://Assets/Shooter Traps/Sprites/Cannon/Cannon Fire Effect/3.png" id="10_w1p3h"]
+[ext_resource type="Texture2D" uid="uid://cv74d7256wq55" path="res://Assets/Shooter Traps/Sprites/Cannon/Cannon Fire Effect/4.png" id="11_lpspg"]
+[ext_resource type="Texture2D" uid="uid://cl6p57mx6dxgj" path="res://Assets/Shooter Traps/Sprites/Cannon/Cannon Fire Effect/5.png" id="12_ubaod"]
+[ext_resource type="Texture2D" uid="uid://ban83fxkqmkog" path="res://Assets/Shooter Traps/Sprites/Cannon/Cannon Fire Effect/6.png" id="13_p14ti"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1yjc3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_63oah")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_scu0k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_t0buk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_i3ggf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_amw5h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_51sxj")
+}],
+"loop": false,
+"name": &"fire",
+"speed": 15.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pjrfn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_go8pw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_xnul3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_w1p3h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_lpspg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_ubaod")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_p14ti")
+}],
+"loop": false,
+"name": &"fireeffect",
+"speed": 10.0
+}]
+
+[node name="Shooter" type="Node2D"]
+script = ExtResource("1_lavs4")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_1yjc3")
+animation = &"fire"
+frame = 5
+
+[node name="FireEfect" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(-20, -1)
+sprite_frames = SubResource("SpriteFrames_pjrfn")
+animation = &"fireeffect"
+frame = 5
+frame_progress = 1.0

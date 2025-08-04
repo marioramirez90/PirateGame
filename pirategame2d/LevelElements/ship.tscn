@@ -1,51 +1,55 @@
-[gd_scene load_steps=11 format=3 uid="uid://bu37jocq5ks72"]
+[gd_scene load_steps=12 format=3 uid="uid://bu37jocq5ks72"]
 
-[ext_resource type="Texture2D" uid="uid://cmfq1qrqt313j" path="res://Assets/Palm Tree Island/Sprites/Objects/Flag/Flag 01.png" id="1_g1py6"]
-[ext_resource type="Texture2D" uid="uid://emtb08cl4bss" path="res://Assets/Palm Tree Island/Sprites/Objects/Flag/Flag 02.png" id="2_hytm8"]
-[ext_resource type="Texture2D" uid="uid://d1v143hcjp6dw" path="res://Assets/Palm Tree Island/Sprites/Objects/Flag/Flag 03.png" id="3_ul4xi"]
-[ext_resource type="Texture2D" uid="uid://he466kiuevhd" path="res://Assets/Palm Tree Island/Sprites/Objects/Flag/Flag 04.png" id="4_c8db4"]
-[ext_resource type="Texture2D" uid="uid://b86yusf4qtqv5" path="res://Assets/Palm Tree Island/Sprites/Objects/Flag/Flag 05.png" id="5_6t3eq"]
-[ext_resource type="Texture2D" uid="uid://bts4sv3sn0eot" path="res://Assets/Palm Tree Island/Sprites/Objects/Flag/Flag 06.png" id="6_bfcmn"]
-[ext_resource type="Texture2D" uid="uid://dkam17fssfxgf" path="res://Assets/Palm Tree Island/Sprites/Objects/Flag/Flag 07.png" id="7_jpxj4"]
-[ext_resource type="Texture2D" uid="uid://dn2jqc4wroxfk" path="res://Assets/Palm Tree Island/Sprites/Objects/Flag/Flag 08.png" id="8_j8qfh"]
-[ext_resource type="Texture2D" uid="uid://bplg3wl3euepg" path="res://Assets/Palm Tree Island/Sprites/Objects/Flag/Flag 09.png" id="9_0scne"]
+[ext_resource type="Texture2D" uid="uid://bo5ywwxu60qmv" path="res://Assets/Palm Tree Island/Sprites/Objects/Ship Helm/Ship Helm Idle 01.png" id="1_hytm8"]
+[ext_resource type="Texture2D" uid="uid://duwy7xyjp6vf0" path="res://Assets/Palm Tree Island/Sprites/Objects/Ship Helm/Ship Helm Idle 02.png" id="2_ul4xi"]
+[ext_resource type="Texture2D" uid="uid://coj5eonnhgpdn" path="res://Assets/Palm Tree Island/Sprites/Objects/Ship Helm/Ship Helm Idle 03.png" id="3_c8db4"]
+[ext_resource type="Texture2D" uid="uid://besysr175heu" path="res://Assets/Palm Tree Island/Sprites/Objects/Ship Helm/Ship Helm Idle 04.png" id="4_6t3eq"]
+[ext_resource type="Texture2D" uid="uid://dvj2h71sudwvw" path="res://Assets/Palm Tree Island/Sprites/Objects/Ship Helm/Ship Helm Idle 05.png" id="5_bfcmn"]
+[ext_resource type="Texture2D" uid="uid://cy4xv0xrkq4tj" path="res://Assets/Palm Tree Island/Sprites/Objects/Ship Helm/Ship Helm Idle 06.png" id="6_jpxj4"]
+[ext_resource type="Texture2D" uid="uid://uc105mmxav48" path="res://Assets/Palm Tree Island/Sprites/Objects/Ship Helm/Ship Helm Turn 01.png" id="7_j8qfh"]
+[ext_resource type="Texture2D" uid="uid://dwkbctu85cady" path="res://Assets/Palm Tree Island/Sprites/Objects/Ship Helm/Ship Helm Turn 02.png" id="8_0scne"]
+[ext_resource type="Texture2D" uid="uid://dkq5vocsx3yk8" path="res://Assets/Palm Tree Island/Sprites/Objects/Ship Helm/Ship Helm Turn 03.png" id="9_ncl1w"]
+[ext_resource type="Texture2D" uid="uid://b5kq1bcsgdbew" path="res://Assets/Palm Tree Island/Sprites/Objects/Ship Helm/Ship Helm Turn 04.png" id="10_u2mqi"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_31vi5"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_g1py6")
+"texture": ExtResource("1_hytm8")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_hytm8")
+"texture": ExtResource("2_ul4xi")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_ul4xi")
+"texture": ExtResource("3_c8db4")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_c8db4")
+"texture": ExtResource("4_6t3eq")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_6t3eq")
+"texture": ExtResource("5_bfcmn")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_bfcmn")
+"texture": ExtResource("6_jpxj4")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_jpxj4")
+"texture": ExtResource("7_j8qfh")
 }, {
 "duration": 1.0,
-"texture": ExtResource("8_j8qfh")
+"texture": ExtResource("8_0scne")
 }, {
 "duration": 1.0,
-"texture": ExtResource("9_0scne")
+"texture": ExtResource("9_ncl1w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_u2mqi")
 }],
 "loop": true,
 "name": &"idle",
 "speed": 5.0
 }]
 
-[node name="Flag" type="Node2D"]
+[node name="ship" type="Node2D"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_31vi5")

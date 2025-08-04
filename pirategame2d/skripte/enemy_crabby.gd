@@ -10,7 +10,9 @@ var enemyHP = 3
 @export
 var enemyDamage = 1
 
+
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+
 
 var playerInDamageZone = false
 var enemyDirection = 1
@@ -77,7 +79,7 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 		$AnimatedSprite2D.play("hit")
 		await get_tree().create_timer(1).timeout
 		enemyDirection = 1
-		checkStatus()
+		checkStatus() 
 	
 	
 	

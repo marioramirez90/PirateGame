@@ -25,7 +25,7 @@ func _process(delta: float) -> void:
 	pass
 	
 func spawnRandomItem(targetLocation):
-	var newItem = null
+	var newItem = nullw
 	
 	randomize()
 	var randomItemSpawner = randi_range(0,2)

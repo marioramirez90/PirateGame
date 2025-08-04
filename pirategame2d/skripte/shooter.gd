@@ -23,6 +23,9 @@ func _ready() -> void:
 		await get_tree().create_timer(waitTimer).timeout
 		fire()
 		
+		
+
+
 	
 func fire():
 	$AnimatedSprite2D.play("fire")

@@ -89,7 +89,7 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if(!isDead and body.is_in_group("player")):
 		playerInDamageZone = true
-		checkStatus()
+		checkStatus ()
 
 
 func _on_area_2d_body_exited(body: Node2D) -> void:

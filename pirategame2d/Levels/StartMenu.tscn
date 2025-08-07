@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://j7nbkps6b4sm"]
+[gd_scene load_steps=6 format=3 uid="uid://j7nbkps6b4sm"]
 
 [ext_resource type="Script" uid="uid://bfvak6nteqg87" path="res://Levels/start_menu.gd" id="1_uh2vy"]
 [ext_resource type="Texture2D" uid="uid://bsvm80cndrx4k" path="res://Assets/videoframe_3096.png" id="2_86ed3"]
+[ext_resource type="FontFile" uid="uid://orp7cj5j0ial" path="res://Freebooter-6yn1.ttf" id="3_cixcu"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rte6l"]
 bg_color = Color(1, 1, 1, 1)
@@ -33,11 +34,23 @@ position = Vector2(433, 247)
 scale = Vector2(1.04779, 1)
 texture = ExtResource("2_86ed3")
 
+[node name="Label" type="Label" parent="."]
+offset_left = 221.0
+offset_top = 88.0
+offset_right = 665.0
+offset_bottom = 171.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 4
+theme_override_fonts/font = ExtResource("3_cixcu")
+theme_override_font_sizes/font_size = 80
+text = "PIRATEWORLD"
+
 [node name="Start" type="Button" parent="."]
-offset_left = 354.0
-offset_top = 203.0
-offset_right = 516.0
-offset_bottom = 246.0
+offset_left = 353.0
+offset_top = 236.0
+offset_right = 515.0
+offset_bottom = 279.0
 size_flags_horizontal = 4
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_rte6l")
@@ -46,10 +59,10 @@ text_overrun_behavior = 3
 autowrap_mode = 2
 
 [node name="Quit" type="Button" parent="."]
-offset_left = 356.0
-offset_top = 267.0
-offset_right = 473.0
-offset_bottom = 310.0
+offset_left = 355.0
+offset_top = 300.0
+offset_right = 472.0
+offset_bottom = 343.0
 scale = Vector2(1.36808, 1)
 size_flags_horizontal = 4
 theme_override_colors/font_color = Color(0, 0, 0, 1)

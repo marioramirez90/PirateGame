@@ -9,7 +9,7 @@ enum projectileTypes {CANNON, TOTEM}
 
 signal playerHit
 
-func playerDamage(value):
+func playerDamage(_value):
 	playerHit.emit()
 	redDiamond -= 1
 	if(redDiamond <= 0):

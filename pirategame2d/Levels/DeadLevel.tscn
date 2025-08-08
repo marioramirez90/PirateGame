@@ -1,15 +1,39 @@
-[gd_scene load_steps=2 format=3 uid="uid://b4j2t11xunvof"]
+[gd_scene load_steps=5 format=3 uid="uid://b4j2t11xunvof"]
 
 [ext_resource type="Script" uid="uid://dmvi5cgikgf5" path="res://skripte/dead_level.gd" id="1_m387c"]
+[ext_resource type="Texture2D" uid="uid://bsvm80cndrx4k" path="res://Assets/videoframe_3096.png" id="2_3h80p"]
+[ext_resource type="Texture2D" uid="uid://ciqjyn2cjadd8" path="res://Assets/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/07-Dead Hit/Dead Hit 04.png" id="3_w5com"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w5com"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
 
 [node name="DeadLevel" type="Node2D"]
 script = ExtResource("1_m387c")
 
 [node name="Button" type="Button" parent="."]
-offset_left = 121.0
-offset_top = 123.0
-offset_right = 278.0
-offset_bottom = 177.0
+offset_left = 364.0
+offset_top = 257.0
+offset_right = 521.0
+offset_bottom = 311.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_w5com")
 text = "Dead! Reload"
+
+[node name="Videoframe3096" type="Sprite2D" parent="."]
+modulate = Color(1, 0.968627, 0.980392, 0.223529)
+show_behind_parent = true
+position = Vector2(464, 305)
+scale = Vector2(1.04436, 1.05725)
+texture = ExtResource("2_3h80p")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(474, 452)
+scale = Vector2(4.9375, 3.75)
+texture = ExtResource("3_w5com")
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

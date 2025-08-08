@@ -1,8 +1,16 @@
-[gd_scene load_steps=6 format=3 uid="uid://b3pi3wcl1bpqb"]
+[gd_scene load_steps=13 format=3 uid="uid://b3pi3wcl1bpqb"]
 
 [ext_resource type="Texture2D" uid="uid://qmj3ug8lfhs5" path="res://Assets/Pirate Ship/Sprites/Tilesets/Terrain and Back Wall (32x32).png" id="1_f4be8"]
+[ext_resource type="FontFile" uid="uid://orp7cj5j0ial" path="res://Freebooter-6yn1.ttf" id="1_wq4eq"]
 [ext_resource type="PackedScene" uid="uid://7t4cs0gj0yoe" path="res://Actors/character.tscn" id="2_qpgk2"]
 [ext_resource type="PackedScene" uid="uid://bd583loe8ahmo" path="res://Actors/LevelTransition.tscn" id="3_wq4eq"]
+[ext_resource type="Texture2D" uid="uid://bq3eqmnbe4nuk" path="res://Assets/Palm Tree Island/Sprites/Background/Additional Water.png" id="4_qpgk2"]
+[ext_resource type="PackedScene" uid="uid://qrxcr1yewe5j" path="res://LevelElements/backPalmTreeLeft.tscn" id="6_iuucu"]
+[ext_resource type="PackedScene" uid="uid://do17gv0hg04l4" path="res://LevelElements/backPalmTreeRegular.tscn" id="7_xr7w8"]
+[ext_resource type="PackedScene" uid="uid://2rbaxjxsi8i5" path="res://LevelElements/Flag.tscn" id="8_lu6ux"]
+[ext_resource type="PackedScene" uid="uid://djdgi08m3ibq8" path="res://LevelElements/FrontPalmTree.tscn" id="9_i7ome"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_7tfuh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7tfuh"]
 texture = ExtResource("1_f4be8")
@@ -577,14 +585,60 @@ sources/0 = SubResource("TileSetAtlasSource_7tfuh")
 
 [node name="WinnerScreen" type="Node2D"]
 
+[node name="Label" type="Label" parent="."]
+top_level = true
+offset_left = 508.0
+offset_top = 237.0
+offset_right = 584.0
+offset_bottom = 286.0
+scale = Vector2(3.59996, 3.04267)
+theme_override_fonts/font = ExtResource("1_wq4eq")
+theme_override_font_sizes/font_size = 0
+text = "YOU WIN!
+"
+label_settings = SubResource("LabelSettings_7tfuh")
+
 [node name="TileMap" type="TileMap" parent="."]
+position = Vector2(566, 379)
 tile_set = SubResource("TileSet_icpag")
 format = 2
-layer_0/tile_data = PackedInt32Array(0, 131072, 2, 65536, 131072, 3, 1, 196608, 2, 65537, 196608, 3, 2, 262144, 2, 65538, 262144, 3, 3, 327680, 2, 65539, 327680, 3, 4, 393216, 2, 65540, 393216, 3, 5, 458752, 2, 65541, 458752, 3, 6, 131072, 2, 65542, 131072, 3, 7, 196608, 2, 65543, 196608, 3, 8, 262144, 2, 65544, 262144, 3, 9, 327680, 2, 65545, 327680, 3, 10, 393216, 2, 65546, 393216, 3, 11, 458752, 2, 65547, 458752, 3, 12, 131072, 2, 65548, 131072, 3, 13, 196608, 2, 65549, 196608, 3, 14, 262144, 2, 65550, 262144, 3, 15, 327680, 2, 65551, 327680, 3, 16, 393216, 2, 65552, 393216, 3, 17, 131072, 2, 65553, 131072, 3, 18, 196608, 2, 65554, 196608, 3, 19, 262144, 2, 65555, 262144, 3, 20, 327680, 2, 65556, 327680, 3, 21, 393216, 2, 65557, 393216, 3, 22, 458752, 2, 65558, 458752, 3, 23, 131072, 2, 65559, 131072, 3, 24, 196608, 2, 65560, 196608, 3, 25, 262144, 2, 65561, 262144, 3, 26, 327680, 2, 65562, 327680, 3, 27, 393216, 2, 65563, 393216, 3, 28, 458752, 2, 65564, 458752, 3, 29, 131072, 2, 65565, 131072, 3, 30, 196608, 2, 65566, 196608, 3, 31, 262144, 2, 65567, 262144, 3, 32, 327680, 2, 65568, 327680, 3, 33, 393216, 2, 65569, 393216, 3, 34, 458752, 2, 65570, 458752, 3, 35, 131072, 2, 65571, 131072, 3, 36, 196608, 2, 65572, 196608, 3, 37, 262144, 2, 65573, 262144, 3, 38, 327680, 2, 65574, 327680, 3, 39, 393216, 2, 65575, 393216, 3, 40, 458752, 2, 65576, 458752, 3, 41, 131072, 2, 65577, 131072, 3, 42, 196608, 2, 65578, 196608, 3, 43, 262144, 2, 65579, 262144, 3, 44, 327680, 2, 65580, 327680, 3, 45, 393216, 2, 65581, 393216, 3, 46, 458752, 2, 65582, 458752, 3, 47, 131072, 2, 65583, 131072, 3, 48, 196608, 2, 65584, 196608, 3, 49, 262144, 2, 65585, 262144, 3, 50, 327680, 2, 65586, 327680, 3, 51, 393216, 2, 65587, 393216, 3, 52, 458752, 2, 65588, 458752, 3, 53, 131072, 2, 65589, 131072, 3, 54, 196608, 2, 65590, 196608, 3, 55, 262144, 2, 65591, 262144, 3, 56, 327680, 2, 65592, 327680, 3, 57, 393216, 2, 65593, 393216, 3, 58, 458752, 2, 65594, 458752, 3)
+layer_0/tile_data = PackedInt32Array(65529, 655360, 10, 131065, 655360, 11, 65530, 720896, 10, 131066, 720896, 11, 65531, 655360, 10, 131067, 655360, 11, 65532, 720896, 10, 131068, 720896, 11, 65533, 655360, 10, 131069, 655360, 11, 65534, 720896, 10, 131070, 720896, 11, 65535, 655360, 10, 131071, 655360, 11, 0, 720896, 10, 65536, 720896, 11, 1, 655360, 10, 65537, 655360, 11, 2, 720896, 10, 65538, 720896, 11, 3, 655360, 10, 65539, 655360, 11, 4, 720896, 10, 65540, 720896, 11, 5, 655360, 10, 65541, 655360, 11, 6, 720896, 10, 65542, 720896, 11, 7, 655360, 10, 65543, 655360, 11, 8, 720896, 10, 65544, 720896, 11, 9, 655360, 10, 65545, 655360, 11, 10, 720896, 10, 65546, 720896, 11, 11, 655360, 10, 65547, 655360, 11, 12, 720896, 10, 65548, 720896, 11, 65527, 655360, 10, 131063, 655360, 11, 65528, 720896, 10, 131064, 720896, 11, 65525, 655360, 10, 131061, 655360, 11, 65526, 720896, 10, 131062, 720896, 11, -196621, 655360, 2, -131085, 655360, 3, -65549, 655360, 4, -13, 655360, 5, 65523, 655360, 6, 131059, 655360, 7, -196620, 720896, 2, -131084, 720896, 3, -65548, 720896, 4, -12, 720896, 5, 65524, 720896, 6, 131060, 720896, 7, -262131, 655360, 2, -196595, 655360, 3, -131059, 655360, 4, -65523, 655360, 5, 13, 655360, 6, 65549, 655360, 7, -262130, 720896, 2, -196594, 720896, 3, -131058, 720896, 4, -65522, 720896, 5, 14, 720896, 6, 65550, 720896, 7, -458767, 655360, 2, -393231, 655360, 3, -327695, 655360, 4, -262159, 655360, 5, -196623, 655360, 6, -131087, 655360, 7, -458766, 720896, 2, -393230, 720896, 3, -327694, 720896, 4, -262158, 720896, 5, -196622, 720896, 6, -131086, 720896, 7, -524273, 655360, 2, -458737, 655360, 3, -393201, 655360, 4, -327665, 655360, 5, -262129, 655360, 6, -196593, 655360, 7, -524272, 720896, 2, -458736, 720896, 3, -393200, 720896, 4, -327664, 720896, 5, -262128, 720896, 6, -196592, 720896, 7, -458765, 655360, 10, -393229, 655360, 11, -458764, 720896, 10, -393228, 720896, 11, -458763, 655360, 10, -393227, 655360, 11, -524276, 720896, 10, -458740, 720896, 11, -524275, 655360, 10, -458739, 655360, 11, -524274, 720896, 10, -458738, 720896, 11)
 
 [node name="Character" parent="." instance=ExtResource("2_qpgk2")]
-position = Vector2(75, -9)
+position = Vector2(575, 337)
 
 [node name="LevelTransision" parent="." instance=ExtResource("3_wq4eq")]
-position = Vector2(918, -18)
+position = Vector2(660, 342)
+scale = Vector2(-1.77816, 2.00851)
 targetLevel = "StartMenu"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+show_behind_parent = true
+position = Vector2(599, 502)
+scale = Vector2(47.3078, 21.6187)
+texture = ExtResource("4_qpgk2")
+offset = Vector2(-6.51055, -11.8878)
+
+[node name="BackPalmTreeLeft" parent="." instance=ExtResource("6_iuucu")]
+show_behind_parent = true
+position = Vector2(784, 365)
+
+[node name="BackPalmTreeRegular" parent="." instance=ExtResource("7_xr7w8")]
+position = Vector2(429, 348)
+
+[node name="BackPalmTreeRegular2" parent="." instance=ExtResource("7_xr7w8")]
+top_level = true
+position = Vector2(502, 345)
+
+[node name="BackPalmTreeRegular3" parent="." instance=ExtResource("7_xr7w8")]
+top_level = true
+position = Vector2(467, 347)
+
+[node name="Flag" parent="." instance=ExtResource("8_lu6ux")]
+position = Vector2(741, 333)
+
+[node name="Flag2" parent="." instance=ExtResource("8_lu6ux")]
+position = Vector2(609, 334)
+
+[node name="FrontPalmTree" parent="." instance=ExtResource("9_i7ome")]
+position = Vector2(527, 365)

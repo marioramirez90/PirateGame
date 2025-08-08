@@ -631,6 +631,9 @@ position = Vector2(2784, 128)
 [node name="Enemy_PinkStar" parent="TileMap" instance=ExtResource("5_jlcom")]
 position = Vector2(2540, 112)
 scale = Vector2(2.56502, 3.01996)
+collision_layer = 1
+slide_on_ceiling = false
+enemySpeed = 50.0
 enemyHP = 10
 
 [node name="Character" parent="." instance=ExtResource("2_wcc2u")]
@@ -1342,6 +1345,7 @@ enemyHP = 1
 
 [node name="Enemy_Crabby11" parent="." instance=ExtResource("7_w0h0a")]
 position = Vector2(1424, 214)
+enemyHP = 1
 
 [node name="Barrel3" parent="." instance=ExtResource("8_x7rwe")]
 position = Vector2(1796, 163)

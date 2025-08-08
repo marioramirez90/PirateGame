@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://j7nbkps6b4sm"]
+[gd_scene load_steps=7 format=3 uid="uid://j7nbkps6b4sm"]
 
 [ext_resource type="Script" uid="uid://bfvak6nteqg87" path="res://Levels/start_menu.gd" id="1_uh2vy"]
 [ext_resource type="Texture2D" uid="uid://bsvm80cndrx4k" path="res://Assets/videoframe_3096.png" id="2_86ed3"]
 [ext_resource type="FontFile" uid="uid://orp7cj5j0ial" path="res://Freebooter-6yn1.ttf" id="3_cixcu"]
+[ext_resource type="AudioStream" uid="uid://c5bmwilvafdk2" path="res://Sound/menumainsound.wav" id="4_vf0l7"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rte6l"]
 bg_color = Color(1, 1, 1, 1)
@@ -71,6 +72,11 @@ text = "QUIT"
 metadata/_edit_use_anchors_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="menusound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_vf0l7")
+volume_db = -17.843
+autoplay = true
 
 [connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

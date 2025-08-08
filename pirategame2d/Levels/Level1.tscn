@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://cw2uh4h84o7uj"]
+[gd_scene load_steps=28 format=3 uid="uid://cw2uh4h84o7uj"]
 
 [ext_resource type="Texture2D" uid="uid://cxfm7vf1gyag1" path="res://Assets/Palm Tree Island/Sprites/Terrain/Terrain (32x32).png" id="1_w77jt"]
 [ext_resource type="PackedScene" uid="uid://7t4cs0gj0yoe" path="res://Actors/character.tscn" id="2_3anf8"]
@@ -24,6 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://bayfhj05ws808" path="res://Assets/Merchant Ship/Sprites/Water/Reflexes 1/1.png" id="20_pp47a"]
 [ext_resource type="Texture2D" uid="uid://x6cis3l5lb3d" path="res://Assets/Merchant Ship/Sprites/Water/Water Splash 2/2.png" id="21_idi36"]
 [ext_resource type="PackedScene" uid="uid://e8d46td0qcdy" path="res://Actors/DeadZone.tscn" id="22_pp47a"]
+[ext_resource type="AudioStream" uid="uid://dqqwopn7wh3fv" path="res://Sound/coastwind.wav" id="25_d73st"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fhqol"]
 texture = ExtResource("1_w77jt")
@@ -1761,3 +1762,8 @@ position = Vector2(2800, 158)
 scale = Vector2(2.26336, 3.92323)
 platform_floor_layers = 4294967055
 enemyHP = 5
+
+[node name="bgSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("25_d73st")
+volume_db = -12.235
+autoplay = true

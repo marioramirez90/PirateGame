@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://e3yc3n1oqsh5"]
+[gd_scene load_steps=11 format=3 uid="uid://e3yc3n1oqsh5"]
 
 [ext_resource type="PackedScene" uid="uid://db3jlmh5ey0gn" path="res://Actors/shooter.tscn" id="1_klown"]
 [ext_resource type="Texture2D" uid="uid://jonm26s0kiy6" path="res://Assets/Shooter Traps/Sprites/Cannon/Cannon Fire/1.png" id="2_8qjrm"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://658syhfghdm3" path="res://Assets/Shooter Traps/Sprites/Cannon/Cannon Fire/5.png" id="6_f2xes"]
 [ext_resource type="Texture2D" uid="uid://dcu8mn2p158yn" path="res://Assets/Shooter Traps/Sprites/Cannon/Cannon Fire/6.png" id="7_d45lr"]
 [ext_resource type="Texture2D" uid="uid://b7bt4sos73y4b" path="res://Assets/Shooter Traps/Sprites/Cannon/Cannon Idle/1.png" id="8_2m358"]
+[ext_resource type="AudioStream" uid="uid://gunrbo0ghwrl" path="res://Sound/canon.wav" id="9_xf5ad"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_8tmp6"]
 animations = [{
@@ -48,3 +49,8 @@ animations = [{
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="1"]
 sprite_frames = SubResource("SpriteFrames_8tmp6")
 animation = &"fire"
+
+[node name="cannonsound" type="AudioStreamPlayer2D" parent="." index="2"]
+stream = ExtResource("9_xf5ad")
+max_distance = 500.0
+attenuation = 2.82843

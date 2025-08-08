@@ -7,6 +7,7 @@ func checkDestroy():
 	hp -= 1
 	if(hp <= 0):
 		$AnimatedSprite2D.play("destroyed")
+		$wood.play()
 		$CPUParticles2D.emitting = true
 		await get_tree().create_timer(0.1).timeout
 		$AnimatedSprite2D.visible = false
@@ -32,6 +33,7 @@ func spawnRandomItem(targetLocation):
 	match(randomItemSpawner):
 		1: newItem = preload("res://Actors/GoldCoin.tscn") 
 		2: newItem = preload("res://Actors/RedDiamond.tscn")
+		
 		
 	if(newItem != null):
 		var newItemInstance = newItem.instantiate()

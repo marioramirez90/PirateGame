@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://b4j2t11xunvof"]
+[gd_scene load_steps=6 format=3 uid="uid://b4j2t11xunvof"]
 
 [ext_resource type="Script" uid="uid://dmvi5cgikgf5" path="res://skripte/dead_level.gd" id="1_m387c"]
 [ext_resource type="Texture2D" uid="uid://bsvm80cndrx4k" path="res://Assets/videoframe_3096.png" id="2_3h80p"]
 [ext_resource type="Texture2D" uid="uid://ciqjyn2cjadd8" path="res://Assets/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/07-Dead Hit/Dead Hit 04.png" id="3_w5com"]
+[ext_resource type="AudioStream" uid="uid://bjabwsc8n1hih" path="res://Sound/failmusic.wav" id="4_uurk1"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w5com"]
 bg_color = Color(1, 1, 1, 1)
@@ -35,5 +36,10 @@ texture = ExtResource("2_3h80p")
 position = Vector2(474, 452)
 scale = Vector2(4.9375, 3.75)
 texture = ExtResource("3_w5com")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_uurk1")
+volume_db = -0.21
+autoplay = true
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

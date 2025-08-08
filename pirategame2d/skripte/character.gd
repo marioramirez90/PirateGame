@@ -21,11 +21,14 @@ func _ready() -> void:
 func playerHit():
 	reciveDamage = true
 	if(hassSword):
+		$hit.play()
 		$AnimatedSprite2D.play("hit_hs")
 	else:
 		$AnimatedSprite2D.play("hit_nos")
 	await get_tree().create_timer(0.5).timeout
 	reciveDamage = false
+	
+
 
 func checkAttack():
 	if Input.is_action_just_pressed("ui_attack"):
@@ -39,7 +42,7 @@ func checkAttack():
 			2: animSprite.play("attack2")
 			3: animSprite.play("attack3")
 		
-		
+		$attack.play()
 		
 		if(animSprite.flip_h):
 			$AttackArea/CollisionShape2D.position.x += -1

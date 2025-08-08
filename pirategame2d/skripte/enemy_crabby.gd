@@ -16,6 +16,7 @@ func _ready() -> void:
 
 func run():
 	$AnimatedSprite2D.play("run")
+	
 
 func _physics_process(delta):
 	if !isDead:

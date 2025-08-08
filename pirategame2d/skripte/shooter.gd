@@ -28,6 +28,13 @@ func _ready() -> void:
 
 	
 func fire():
+	
+	if($cannonsound):
+		$cannonsound.play()
+	if($woodprojectil):
+		$woodprojectil.play()
+	
+	
 	$AnimatedSprite2D.play("fire")
 	await get_tree().create_timer(0.2).timeout
 	if(showFireEffect == true):

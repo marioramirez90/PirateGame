@@ -14,4 +14,7 @@ func _process(delta: float) -> void:
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if(body.is_in_group("player")):
 		Global.addGoldCoin()
+		$AudioStreamPlayer2D.play(0.2)
+		$AnimatedSprite2D.visible = false
+		await get_tree().create_timer(0.5).timeout
 		queue_free()

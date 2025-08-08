@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dbwkk0kg5om0q"]
+[gd_scene load_steps=16 format=3 uid="uid://dbwkk0kg5om0q"]
 
 [ext_resource type="Script" uid="uid://bi3ugpemjlop2" path="res://skripte/barrel.gd" id="1_152gv"]
 [ext_resource type="Texture2D" uid="uid://y2krlf732cqu" path="res://Assets/Merchant Ship/Sprites/Barrel/Hit/1.png" id="2_ddltg"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://lphtfquqo2hi" path="res://Assets/Merchant Ship/Sprites/Barrel/Hit/4.png" id="5_edwtx"]
 [ext_resource type="Texture2D" uid="uid://bdt84espjr4lg" path="res://Assets/Merchant Ship/Sprites/Barrel/Idle/1.png" id="6_xim4p"]
 [ext_resource type="Texture2D" uid="uid://dj8jjmxcia4yo" path="res://Assets/Merchant Ship/Sprites/Barrel/Destroyed/5.png" id="6_xqh0f"]
+[ext_resource type="AudioStream" uid="uid://qmmd0kymlmso" path="res://Sound/wooddestroy.wav" id="12_hd5m5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dtq3g"]
 size = Vector2(23, 25)
@@ -94,5 +95,8 @@ gravity = Vector2(0, 2)
 initial_velocity_min = 187.5
 initial_velocity_max = 187.5
 scale_amount_curve = SubResource("Curve_hob80")
+
+[node name="wood" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("12_hd5m5")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

@@ -12,7 +12,9 @@ func _process(delta):
 
 
 func _on_quit_pressed() -> void:
+	OS.shell_open("https://mario-ramirez.de")
 	get_tree().quit()
+
 
 
 func _on_start_pressed() -> void:

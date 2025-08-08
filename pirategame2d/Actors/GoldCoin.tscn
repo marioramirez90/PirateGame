@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://b0v8jywivy8mu"]
+[gd_scene load_steps=9 format=3 uid="uid://b0v8jywivy8mu"]
 
 [ext_resource type="Script" uid="uid://dfah1dtf6mn2n" path="res://skripte/gold_coin.gd" id="1_0cr25"]
 [ext_resource type="Texture2D" uid="uid://cers8leop57lq" path="res://Assets/Pirate Treasure/Sprites/Gold Coin/01.png" id="2_kmbsn"]
 [ext_resource type="Texture2D" uid="uid://b4ievvajc4u3c" path="res://Assets/Pirate Treasure/Sprites/Gold Coin/02.png" id="3_sd63e"]
 [ext_resource type="Texture2D" uid="uid://bjfm3iud5f2pd" path="res://Assets/Pirate Treasure/Sprites/Gold Coin/03.png" id="4_iv3mu"]
 [ext_resource type="Texture2D" uid="uid://doue45he2re3p" path="res://Assets/Pirate Treasure/Sprites/Gold Coin/04.png" id="5_cflve"]
+[ext_resource type="AudioStream" uid="uid://bpn2n83nciyiw" path="res://Sound/collectCoin.wav" id="6_kmbsn"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_icuyf"]
 animations = [{
@@ -40,5 +41,9 @@ autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_2u8im")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_kmbsn")
+volume_db = -4.078
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

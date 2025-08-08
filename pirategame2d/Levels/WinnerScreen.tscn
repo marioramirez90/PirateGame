@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://b3pi3wcl1bpqb"]
+[gd_scene load_steps=14 format=3 uid="uid://b3pi3wcl1bpqb"]
 
 [ext_resource type="Texture2D" uid="uid://qmj3ug8lfhs5" path="res://Assets/Pirate Ship/Sprites/Tilesets/Terrain and Back Wall (32x32).png" id="1_f4be8"]
 [ext_resource type="FontFile" uid="uid://orp7cj5j0ial" path="res://Freebooter-6yn1.ttf" id="1_wq4eq"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://do17gv0hg04l4" path="res://LevelElements/backPalmTreeRegular.tscn" id="7_xr7w8"]
 [ext_resource type="PackedScene" uid="uid://2rbaxjxsi8i5" path="res://LevelElements/Flag.tscn" id="8_lu6ux"]
 [ext_resource type="PackedScene" uid="uid://djdgi08m3ibq8" path="res://LevelElements/FrontPalmTree.tscn" id="9_i7ome"]
+[ext_resource type="AudioStream" uid="uid://b2w66daixfpme" path="res://Sound/winning.wav" id="10_xr7w8"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_7tfuh"]
 
@@ -642,3 +643,8 @@ position = Vector2(609, 334)
 
 [node name="FrontPalmTree" parent="." instance=ExtResource("9_i7ome")]
 position = Vector2(527, 365)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_xr7w8")
+volume_db = -8.157
+autoplay = true

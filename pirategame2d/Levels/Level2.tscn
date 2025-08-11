@@ -631,9 +631,9 @@ position = Vector2(2784, 128)
 
 [node name="Enemy_PinkStar" parent="TileMap" instance=ExtResource("5_jlcom")]
 position = Vector2(2540, 112)
-scale = Vector2(2.81952, 2.66758)
+scale = Vector2(3.34584, 3.77892)
 collision_layer = 1
-enemyHP = 8
+enemyHP = 1
 
 [node name="Character" parent="." instance=ExtResource("2_wcc2u")]
 top_level = true

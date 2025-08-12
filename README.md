@@ -1,5 +1,5 @@
 play game
-https://delicate-pastelito-b8fdea.netlify.app/web.html
+https://comforting-platypus-ddaaa2.netlify.app/
 
 🕹️ Steuerung (Tastatur):
 Leertaste → Springen

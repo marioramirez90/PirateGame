@@ -24,6 +24,7 @@ offset_bottom = 311.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_w5com")
 text = "Dead! Reload"
+metadata/_edit_use_anchors_ = true
 
 [node name="Videoframe3096" type="Sprite2D" parent="."]
 modulate = Color(1, 0.968627, 0.980392, 0.223529)

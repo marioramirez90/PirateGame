@@ -598,6 +598,7 @@ theme_override_font_sizes/font_size = 0
 text = "YOU WIN!
 "
 label_settings = SubResource("LabelSettings_7tfuh")
+metadata/_edit_use_anchors_ = true
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(566, 379)
@@ -615,8 +616,8 @@ targetLevel = "StartMenu"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 show_behind_parent = true
-position = Vector2(599, 502)
-scale = Vector2(47.3078, 21.6187)
+position = Vector2(808.049, 551.298)
+scale = Vector2(35.7188, 19.625)
 texture = ExtResource("4_qpgk2")
 offset = Vector2(-6.51055, -11.8878)
 

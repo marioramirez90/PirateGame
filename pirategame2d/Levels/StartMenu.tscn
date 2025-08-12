@@ -26,14 +26,14 @@ shadow_size = 5
 shadow_offset = Vector2(0, 3.41)
 
 [node name="StartMenu" type="Node2D"]
-position = Vector2(1, 1)
 script = ExtResource("1_uh2vy")
 
 [node name="Videoframe3096" type="Sprite2D" parent="."]
 modulate = Color(0.996078, 1, 1, 0.337255)
-position = Vector2(433, 247)
+position = Vector2(439, 289)
 scale = Vector2(1.04779, 1)
 texture = ExtResource("2_86ed3")
+metadata/_edit_group_ = true
 
 [node name="Label" type="Label" parent="."]
 offset_left = 221.0
@@ -69,7 +69,6 @@ size_flags_horizontal = 4
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_86ed3")
 text = "QUIT"
-metadata/_edit_use_anchors_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 

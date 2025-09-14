@@ -26,20 +26,22 @@ shadow_size = 5
 shadow_offset = Vector2(0, 3.41)
 
 [node name="StartMenu" type="Node2D"]
+position = Vector2(226, 27)
+scale = Vector2(1.62735, 1.77772)
 script = ExtResource("1_uh2vy")
 
 [node name="Videoframe3096" type="Sprite2D" parent="."]
 modulate = Color(0.996078, 1, 1, 0.337255)
-position = Vector2(439, 289)
-scale = Vector2(1.04779, 1)
+position = Vector2(453.442, 286.135)
+scale = Vector2(1.07434, 0.990576)
 texture = ExtResource("2_86ed3")
 metadata/_edit_group_ = true
 
 [node name="Label" type="Label" parent="."]
-offset_left = 221.0
-offset_top = 88.0
-offset_right = 665.0
-offset_bottom = 171.0
+offset_left = 236.977
+offset_top = 127.376
+offset_right = 680.977
+offset_bottom = 210.376
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 2
 theme_override_constants/shadow_offset_y = 4
@@ -48,10 +50,10 @@ theme_override_font_sizes/font_size = 80
 text = "PIRATEWORLD"
 
 [node name="Start" type="Button" parent="."]
-offset_left = 353.0
-offset_top = 236.0
-offset_right = 515.0
-offset_bottom = 279.0
+offset_left = 368.977
+offset_top = 275.376
+offset_right = 530.977
+offset_bottom = 318.376
 size_flags_horizontal = 4
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_rte6l")
@@ -60,10 +62,10 @@ text_overrun_behavior = 3
 autowrap_mode = 2
 
 [node name="Quit" type="Button" parent="."]
-offset_left = 355.0
-offset_top = 300.0
-offset_right = 472.0
-offset_bottom = 343.0
+offset_left = 370.977
+offset_top = 339.376
+offset_right = 487.977
+offset_bottom = 382.376
 scale = Vector2(1.36808, 1)
 size_flags_horizontal = 4
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -71,6 +73,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_86ed3")
 text = "QUIT"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(15.9768, 39.3763)
 
 [node name="menusound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_vf0l7")

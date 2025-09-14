@@ -14,6 +14,8 @@ corner_radius_bottom_left = 16
 shadow_size = 5
 
 [node name="DeadLevel" type="Node2D"]
+position = Vector2(172, 23)
+scale = Vector2(1.70587, 1.72289)
 script = ExtResource("1_m387c")
 
 [node name="Button" type="Button" parent="."]

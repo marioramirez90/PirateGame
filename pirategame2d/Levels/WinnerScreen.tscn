@@ -585,13 +585,14 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_7tfuh")
 
 [node name="WinnerScreen" type="Node2D"]
+scale = Vector2(1.66619, 1.69087)
 
 [node name="Label" type="Label" parent="."]
 top_level = true
-offset_left = 508.0
-offset_top = 237.0
-offset_right = 584.0
-offset_bottom = 286.0
+offset_left = 845.0
+offset_top = 347.0
+offset_right = 921.0
+offset_bottom = 396.0
 scale = Vector2(3.59996, 3.04267)
 theme_override_fonts/font = ExtResource("1_wq4eq")
 theme_override_font_sizes/font_size = 0
@@ -616,8 +617,8 @@ targetLevel = "StartMenu"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 show_behind_parent = true
-position = Vector2(808.049, 551.298)
-scale = Vector2(35.7188, 19.625)
+position = Vector2(814.332, 557.673)
+scale = Vector2(35.9979, 19.8536)
 texture = ExtResource("4_qpgk2")
 offset = Vector2(-6.51055, -11.8878)
 

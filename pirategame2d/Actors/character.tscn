@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://7t4cs0gj0yoe"]
+[gd_scene load_steps=56 format=3 uid="uid://7t4cs0gj0yoe"]
 
 [ext_resource type="Script" uid="uid://xuddvabktfji" path="res://skripte/character.gd" id="1_35862"]
 [ext_resource type="Texture2D" uid="uid://dd5ebejlfmkyt" path="res://Assets/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/01-Idle/Idle 01.png" id="2_1lpgc"]
@@ -51,6 +51,7 @@
 [ext_resource type="PackedScene" uid="uid://dxbaqplc712ib" path="res://Gui/MainHud.tscn" id="41_elj2o"]
 [ext_resource type="AudioStream" uid="uid://ctfxx4bkxjsen" path="res://Sound/swordattack.wav" id="50_wilck"]
 [ext_resource type="AudioStream" uid="uid://b3mpr45pk1fhc" path="res://Sound/playerhit.wav" id="51_xhchj"]
+[ext_resource type="PackedScene" path="res://Gui/MobileControls.tscn" id="52_mobile"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_is1bp"]
 radius = 12.0
@@ -292,6 +293,8 @@ shape = SubResource("RectangleShape2D_8g5tv")
 disabled = true
 
 [node name="MainHud" parent="." instance=ExtResource("41_elj2o")]
+
+[node name="MobileControls" parent="." instance=ExtResource("52_mobile")]
 
 [node name="attack" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("50_wilck")

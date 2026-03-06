@@ -8,6 +8,7 @@ const JUMP_VELOCITY = -400.0
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 @onready var animSprite = $AnimatedSprite2D
+@onready var camera = $Camera2D
 
 var hassSword = false
 
@@ -17,6 +18,12 @@ var reciveDamage = false
 
 func _ready() -> void:
 	Global.playerHit.connect(Callable(self, "playerHit"))
+	_setup_camera_zoom()
+	
+func _setup_camera_zoom() -> void:
+	# Nur auf mobilen Geräten stärker zoomen
+	if DisplayServer.is_touchscreen_available():
+		camera.zoom = Vector2(1.5, 1.5)  # Stärker zoomen auf mobil
 	
 func playerHit():
 	reciveDamage = true

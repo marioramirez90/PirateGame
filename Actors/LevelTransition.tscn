@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://bd583loe8ahmo"]
+
+[ext_resource type="Script" uid="uid://cew4u1llyv62m" path="res://skripte/level_transition.gd" id="1_usvue"]
+[ext_resource type="Texture2D" uid="uid://cdpdpjyfd0ye8" path="res://Assets/Palm Tree Island/Sprites/Objects/Chest/Chest Close 02.png" id="2_a16lr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ge2kr"]
+size = Vector2(31, 23)
+
+[node name="LevelTransision" type="Node2D"]
+script = ExtResource("1_usvue")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_a16lr")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0.5, 5.5)
+shape = SubResource("RectangleShape2D_ge2kr")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

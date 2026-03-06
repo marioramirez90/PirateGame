@@ -1,0 +1,98 @@
+[gd_scene load_steps=22 format=3 uid="uid://cbpjdafut6ccl"]
+
+[ext_resource type="Texture2D" uid="uid://dfxjnd88i1jxl" path="res://Assets/Palm Tree Island/Sprites/Objects/Chest/Chest Close 01.png" id="1_pd77p"]
+[ext_resource type="Texture2D" uid="uid://cdpdpjyfd0ye8" path="res://Assets/Palm Tree Island/Sprites/Objects/Chest/Chest Close 02.png" id="2_mie72"]
+[ext_resource type="Texture2D" uid="uid://suv1tg3xs1ia" path="res://Assets/Palm Tree Island/Sprites/Objects/Chest/Chest Close 03.png" id="3_eaaao"]
+[ext_resource type="Texture2D" uid="uid://bqc32phvbtx4" path="res://Assets/Palm Tree Island/Sprites/Objects/Chest/Chest Close 04.png" id="4_ltk8d"]
+[ext_resource type="Texture2D" uid="uid://cqjnoqc66mdyg" path="res://Assets/Palm Tree Island/Sprites/Objects/Chest/Chest Close 05.png" id="5_pxmsy"]
+[ext_resource type="Texture2D" uid="uid://bmq8lqic3frfo" path="res://Assets/Palm Tree Island/Sprites/Objects/Chest/Chest Close 06.png" id="6_gt1le"]
+[ext_resource type="Texture2D" uid="uid://hw6nwufk7j55" path="res://Assets/Palm Tree Island/Sprites/Objects/Chest/Chest Close 07.png" id="7_4yya1"]
+[ext_resource type="Texture2D" uid="uid://cduyttkxtbj4j" path="res://Assets/Palm Tree Island/Sprites/Objects/Chest/Chest Close 08.png" id="8_foau3"]
+[ext_resource type="Texture2D" uid="uid://dpdgxmt35e76s" path="res://Assets/Palm Tree Island/Sprites/Objects/Chest/Chest Close 09.png" id="9_4bsjf"]
+[ext_resource type="Texture2D" uid="uid://yhobb1fdg682" path="res://Assets/Palm Tree Island/Sprites/Objects/Chest/Chest Close 10.png" id="10_5118w"]
+[ext_resource type="Texture2D" uid="uid://dwwew4n775hq5" path="res://Assets/Palm Tree Island/Sprites/Objects/Chest/Chest Open 01.png" id="11_ikt2m"]
+[ext_resource type="Texture2D" uid="uid://dwmip6w85u7rj" path="res://Assets/Palm Tree Island/Sprites/Objects/Chest/Chest Open 02.png" id="12_xsmep"]
+[ext_resource type="Texture2D" uid="uid://drh2m38usv10l" path="res://Assets/Palm Tree Island/Sprites/Objects/Chest/Chest Open 03.png" id="13_ujr24"]
+[ext_resource type="Texture2D" uid="uid://dxmg6fnu3fa5h" path="res://Assets/Palm Tree Island/Sprites/Objects/Chest/Chest Open 04.png" id="14_mdkbn"]
+[ext_resource type="Texture2D" uid="uid://dkxcw1nybq8k2" path="res://Assets/Palm Tree Island/Sprites/Objects/Chest/Chest Open 05.png" id="15_xa0cx"]
+[ext_resource type="Texture2D" uid="uid://b6588b7gqsn5a" path="res://Assets/Palm Tree Island/Sprites/Objects/Chest/Chest Open 06.png" id="16_cko5n"]
+[ext_resource type="Texture2D" uid="uid://bpsima363unje" path="res://Assets/Palm Tree Island/Sprites/Objects/Chest/Chest Open 07.png" id="17_prkyc"]
+[ext_resource type="Texture2D" uid="uid://cvlppb0vnwbwy" path="res://Assets/Palm Tree Island/Sprites/Objects/Chest/Chest Open 08.png" id="18_0pb8a"]
+[ext_resource type="Texture2D" uid="uid://cn4yvunw6b3u0" path="res://Assets/Palm Tree Island/Sprites/Objects/Chest/Chest Open 09.png" id="19_iuqci"]
+[ext_resource type="Texture2D" uid="uid://c3nwicq3n4evd" path="res://Assets/Palm Tree Island/Sprites/Objects/Chest/Chest Open 10.png" id="20_txjhh"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_31vi5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_pd77p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_mie72")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_eaaao")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ltk8d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_pxmsy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_gt1le")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_4yya1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_foau3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_4bsjf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_5118w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_ikt2m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_xsmep")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_ujr24")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_mdkbn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_xa0cx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_cko5n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_prkyc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_0pb8a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_iuqci")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_txjhh")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="chest" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_31vi5")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.1002

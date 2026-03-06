@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://b4j2t11xunvof"]
+
+[ext_resource type="Script" uid="uid://dmvi5cgikgf5" path="res://skripte/dead_level.gd" id="1_m387c"]
+[ext_resource type="Texture2D" uid="uid://bsvm80cndrx4k" path="res://Assets/videoframe_3096.png" id="2_3h80p"]
+[ext_resource type="Texture2D" uid="uid://ciqjyn2cjadd8" path="res://Assets/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/07-Dead Hit/Dead Hit 04.png" id="3_w5com"]
+[ext_resource type="AudioStream" uid="uid://bjabwsc8n1hih" path="res://Sound/failmusic.wav" id="4_uurk1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w5com"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+
+[node name="DeadLevel" type="Node2D" unique_id=2123156325]
+position = Vector2(172, 23)
+scale = Vector2(1.70587, 1.72289)
+script = ExtResource("1_m387c")
+
+[node name="Button" type="Button" parent="." unique_id=1974999515]
+offset_left = -35.1727
+offset_top = 33.083923
+offset_right = 121.8273
+offset_bottom = 87.08392
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_w5com")
+text = "Dead! Reload"
+metadata/_edit_use_anchors_ = true
+
+[node name="Videoframe3096" type="Sprite2D" parent="." unique_id=675917391]
+modulate = Color(1, 0.968627, 0.980392, 0.223529)
+show_behind_parent = true
+position = Vector2(86.75925, 88.80428)
+scale = Vector2(0.34948283, 0.34201095)
+texture = ExtResource("2_3h80p")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1456912383]
+position = Vector2(86.759254, 144.52461)
+scale = Vector2(2.9930081, 1.8573442)
+texture = ExtResource("3_w5com")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1358686485]
+stream = ExtResource("4_uurk1")
+volume_db = -0.21
+autoplay = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

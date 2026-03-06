@@ -1,0 +1,90 @@
+[gd_scene format=3 uid="uid://j7nbkps6b4sm"]
+
+[ext_resource type="Script" uid="uid://bfvak6nteqg87" path="res://Levels/start_menu.gd" id="1_uh2vy"]
+[ext_resource type="Texture2D" uid="uid://bsvm80cndrx4k" path="res://Assets/videoframe_3096.png" id="2_86ed3"]
+[ext_resource type="FontFile" uid="uid://orp7cj5j0ial" path="res://Freebooter-6yn1.ttf" id="3_cixcu"]
+[ext_resource type="AudioStream" uid="uid://c5bmwilvafdk2" path="res://Sound/menumainsound.wav" id="4_vf0l7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rte6l"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.239216)
+shadow_size = 5
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_86ed3"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.392157)
+shadow_size = 5
+shadow_offset = Vector2(0, 3.41)
+
+[node name="StartMenu" type="Node2D" unique_id=1533843848]
+position = Vector2(-24.999985, -44.999992)
+scale = Vector2(0.8, 0.8)
+script = ExtResource("1_uh2vy")
+
+[node name="Videoframe3096" type="Sprite2D" parent="." unique_id=2031973919]
+modulate = Color(0.996078, 1, 1, 0.337255)
+position = Vector2(431.25, 281.25)
+scale = Vector2(0.7352941, 0.74013156)
+texture = ExtResource("2_86ed3")
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="." unique_id=1148744115]
+offset_left = 261.24997
+offset_top = 126.249985
+offset_right = 705.25
+offset_bottom = 209.25
+scale = Vector2(0.8, 0.8)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 4
+theme_override_fonts/font = ExtResource("3_cixcu")
+theme_override_font_sizes/font_size = 80
+text = "PIRATEWORLD"
+metadata/_edit_use_anchors_ = true
+
+[node name="Start" type="Button" parent="." unique_id=1703159633]
+offset_left = 361.24994
+offset_top = 276.25
+offset_right = 523.24994
+offset_bottom = 319.25
+scale = Vector2(0.8, 0.8)
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_rte6l")
+text = "START GAME"
+text_overrun_behavior = 3
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Quit" type="Button" parent="." unique_id=1542945650]
+offset_left = 381.24997
+offset_top = 346.25
+offset_right = 498.24997
+offset_bottom = 389.25
+scale = Vector2(0.8, 0.8)
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_86ed3")
+text = "QUIT"
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1174168791]
+position = Vector2(15.9768, 39.3763)
+scale = Vector2(0.8, 0.8)
+
+[node name="menusound" type="AudioStreamPlayer" parent="." unique_id=735567582]
+stream = ExtResource("4_vf0l7")
+volume_db = -17.843
+autoplay = true
+
+[connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

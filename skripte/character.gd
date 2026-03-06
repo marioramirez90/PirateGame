@@ -20,9 +20,8 @@ func _ready() -> void:
 	_setup_camera_zoom()
 	
 func _setup_camera_zoom() -> void:
-	# Nur auf mobilen Geräten stärker zoomen
-	if DisplayServer.is_touchscreen_available():
-		camera.zoom = Vector2(3.0, 3.0)  # Stärker zoomen auf mobil
+	# Zoom auf 6.0 für alle Geräte
+	camera.zoom = Vector2(6.0, 6.0)
 	
 func playerHit():
 	reciveDamage = true

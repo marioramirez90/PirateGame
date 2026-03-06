@@ -13,7 +13,6 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var hassSword = false
 
 var isAttacking = false
-var toggleAttack = false
 var reciveDamage = false
 
 func _ready() -> void:
@@ -40,6 +39,15 @@ func playerHit():
 func checkAttack():
 	if Input.is_action_just_pressed("ui_attack"):
 		isAttacking = true 
+		
+		# AttackArea spiegeln basierend auf Blickrichtung
+		if(animSprite.flip_h):
+			# Nach links angreifen
+			$AttackArea.scale.x = -1
+		else:
+			# Nach rechts angreifen
+			$AttackArea.scale.x = 1
+		
 		$AttackArea/CollisionShape2D.disabled = false
 		
 		randomize()
@@ -50,10 +58,6 @@ func checkAttack():
 			3: animSprite.play("attack3")
 		
 		$attack.play()
-		
-		if(animSprite.flip_h):
-			$AttackArea/CollisionShape2D.position.x += -1
-			toggleAttack = true
 
 
 
@@ -107,7 +111,4 @@ func _physics_process(delta):
 func _on_animated_sprite_2d_animation_finished() -> void:
 	isAttacking = false
 	$AttackArea/CollisionShape2D.disabled = true
-	if(toggleAttack):
-		$AttackArea/CollisionShape2D.position.x += -1
-		toggleAttack =false
 		

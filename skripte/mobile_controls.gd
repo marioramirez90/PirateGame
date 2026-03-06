@@ -2,57 +2,46 @@ extends CanvasLayer
 
 var button_rects: Dictionary = {}
 var touch_actions: Dictionary = {}
+var button_textures: Dictionary = {}
 
 func _ready():
 	if not DisplayServer.is_touchscreen_available():
 		queue_free()
 		return
+	_load_button_textures()
 	_setup_controls()
+
+func _load_button_textures():
+	# Lade die Button-Bilder aus dem button Ordner
+	button_textures["left"] = load("res://button/left.png")
+	button_textures["right"] = load("res://button/right.png")
+	button_textures["jump"] = load("res://button/jump.png")
+	button_textures["attack"] = load("res://button/attack.png")
 
 func _setup_controls():
 	var vp_size = get_viewport().get_visible_rect().size
-	var btn_size = 70.0
+	var btn_size = 80.0
 	var margin = 15.0
 	var spacing = 10.0
 	var bottom_y = vp_size.y - margin - btn_size
 
 	# Left side - movement
-	_add_button("ui_left", "◀", Vector2(margin, bottom_y), Vector2(btn_size, btn_size))
-	_add_button("ui_right", "▶", Vector2(margin + btn_size + spacing, bottom_y), Vector2(btn_size, btn_size))
+	_add_button("ui_left", "left", Vector2(margin, bottom_y), Vector2(btn_size, btn_size))
+	_add_button("ui_right", "right", Vector2(margin + btn_size + spacing, bottom_y), Vector2(btn_size, btn_size))
 
 	# Right side - actions
-	_add_button("ui_accept", "▲", Vector2(vp_size.x - margin - btn_size * 2 - spacing, bottom_y), Vector2(btn_size, btn_size))
-	_add_button("ui_attack", "⚔", Vector2(vp_size.x - margin - btn_size, bottom_y), Vector2(btn_size, btn_size))
+	_add_button("ui_accept", "jump", Vector2(vp_size.x - margin - btn_size * 2 - spacing, bottom_y), Vector2(btn_size, btn_size))
+	_add_button("ui_attack", "attack", Vector2(vp_size.x - margin - btn_size, bottom_y), Vector2(btn_size, btn_size))
 
-func _add_button(action: String, label_text: String, pos: Vector2, bsize: Vector2):
-	var panel = Panel.new()
-	panel.position = pos
-	panel.size = bsize
-	panel.mouse_filter = Control.MOUSE_FILTER_IGNORE
-
-	var style = StyleBoxFlat.new()
-	style.bg_color = Color(0.1, 0.1, 0.1, 0.5)
-	style.corner_radius_top_left = 12
-	style.corner_radius_top_right = 12
-	style.corner_radius_bottom_left = 12
-	style.corner_radius_bottom_right = 12
-	style.border_width_top = 2
-	style.border_width_bottom = 2
-	style.border_width_left = 2
-	style.border_width_right = 2
-	style.border_color = Color(1, 1, 1, 0.3)
-	panel.add_theme_stylebox_override("panel", style)
-	add_child(panel)
-
-	var lbl = Label.new()
-	lbl.text = label_text
-	lbl.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	lbl.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
-	lbl.set_anchors_preset(Control.PRESET_FULL_RECT)
-	lbl.add_theme_font_size_override("font_size", int(bsize.y * 0.45))
-	lbl.add_theme_color_override("font_color", Color(1, 1, 1, 0.85))
-	lbl.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	panel.add_child(lbl)
+func _add_button(action: String, texture_key: String, pos: Vector2, bsize: Vector2):
+	var texture_rect = TextureRect.new()
+	texture_rect.texture = button_textures[texture_key]
+	texture_rect.position = pos
+	texture_rect.size = bsize
+	texture_rect.expand_mode = TextureRect.EXPAND_FIT_WIDTH_PROPORTIONAL
+	texture_rect.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+	texture_rect.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	add_child(texture_rect)
 
 	# Touch area slightly larger than visual button
 	var touch_padding = 5.0

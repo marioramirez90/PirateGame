@@ -89,12 +89,39 @@ body {
 	text-align: center;
 	z-index: 1;
 }
+
+#fullscreen-btn {
+	position: fixed;
+	top: 10px;
+	right: 10px;
+	padding: 10px 15px;
+	background-color: rgba(0, 0, 0, 0.7);
+	color: white;
+	border: 2px solid rgba(255, 255, 255, 0.5);
+	border-radius: 5px;
+	font-size: 14px;
+	font-family: Arial, sans-serif;
+	cursor: pointer;
+	z-index: 100;
+	transition: all 0.3s ease;
+}
+
+#fullscreen-btn:hover {
+	background-color: rgba(0, 0, 0, 0.9);
+	border-color: rgba(255, 255, 255, 0.8);
+}
+
+#fullscreen-btn:active {
+	transform: scale(0.95);
+}
 		</style>
 		<link id="-gd-engine-icon" rel="icon" type="image/png" href="index.icon.png" />
 <link rel="apple-touch-icon" href="index.apple-touch-icon.png"/>
 
 	</head>
 	<body>
+		<button id="fullscreen-btn" title="Fullscreen">⛶ Fullscreen</button>
+		
 		<canvas id="canvas">
 			Your browser does not support the canvas tag.
 		</canvas>
@@ -111,6 +138,29 @@ body {
 
 		<script src="index.js"></script>
 		<script>
+// Fullscreen Button Funktionalität
+const fullscreenBtn = document.getElementById('fullscreen-btn');
+fullscreenBtn.addEventListener('click', () => {
+	if (!document.fullscreenElement) {
+		document.documentElement.requestFullscreen().catch(err => {
+			alert(`Fehler beim Fullscreen: ${err.message}`);
+		});
+		fullscreenBtn.textContent = '⛶ Exit Fullscreen';
+	} else {
+		document.exitFullscreen();
+		fullscreenBtn.textContent = '⛶ Fullscreen';
+	}
+});
+
+// Fullscreen-Status überwachen
+document.addEventListener('fullscreenchange', () => {
+	if (document.fullscreenElement) {
+		fullscreenBtn.textContent = '⛶ Exit Fullscreen';
+	} else {
+		fullscreenBtn.textContent = '⛶ Fullscreen';
+	}
+});
+
 const GODOT_CONFIG = {"args":[],"canvasResizePolicy":2,"emscriptenPoolSize":8,"ensureCrossOriginIsolationHeaders":true,"executable":"index","experimentalVK":false,"fileSizes":{"index.pck":26711592,"index.wasm":35739700},"focusCanvas":true,"gdextensionLibs":[],"godotPoolSize":4};
 const GODOT_THREADS_ENABLED = false;
 const engine = new Engine(GODOT_CONFIG);

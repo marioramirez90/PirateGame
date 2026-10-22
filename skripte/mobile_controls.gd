@@ -5,9 +5,37 @@ var touch_actions: Dictionary = {}
 var button_textures: Dictionary = {}
 
 func _ready():
-	# Buttons für alle Geräte anzeigen (Desktop und Mobile)
+	if not _is_mobile():
+		hide()
+		set_process_input(false)
+		queue_free()
+		return
+
 	_load_button_textures()
 	_setup_controls()
+
+func _is_mobile() -> bool:
+	# Native mobile Betriebssysteme (Android, iOS)
+	if OS.has_feature("mobile") or OS.get_name() in ["Android", "iOS"]:
+		return true
+
+	# Web-Export auf mobilen Geräten (Smartphones, Tablets)
+	if OS.has_feature("web"):
+		if OS.has_feature("web_android") or OS.has_feature("web_ios"):
+			return true
+		if OS.has_feature("javascript"):
+			var is_mobile_browser = JavaScriptBridge.eval(
+				"(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) || (navigator.maxTouchPoints > 1 && /Macintosh/.test(navigator.userAgent))"
+			)
+			if is_mobile_browser:
+				return true
+		return false
+
+	# Native Desktop-Betriebssysteme (Windows, macOS, Linux)
+	if OS.has_feature("desktop"):
+		return false
+
+	return DisplayServer.is_touchscreen_available()
 
 func _load_button_textures():
 	# Lade die Button-Bilder aus dem button Ordner
